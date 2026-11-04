@@ -19,10 +19,20 @@
   <!-- ===== Vue lecture : ce que les visiteurs voient ===== -->
   <main id="vue-lecture">
     <section class="hero">
-      <h1>Entre les Pages</h1>
-      <p class="sous-titre">Des histoires à découvrir, une page à la fois, dans le calme d'une vieille bibliothèque.</p>
+      <!-- La grande fenêtre sur la bibliothèque : c'est elle qui accueille le visiteur -->
+      <div class="fenetre">
+        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=80" alt="Une grande bibliothèque ancienne, pleine de livres">
+      </div>
+      <h1>Bienvenue entre les Pages</h1>
+      <p class="sous-titre">Entre, installe-toi. Ici, des histoires t'attendent, une page à la fois, dans la chaleur et le calme d'une vieille bibliothèque.</p>
+      <a class="bouton-hero" href="#histoires">Découvrir les histoires ↓</a>
     </section>
-    <section>
+    <section class="bienvenue">
+      <div class="mini-carte"><span>📖</span><h3>Des histoires à découvrir</h3><p>Chaque histoire s'ouvre comme un livre qu'on prend sur une étagère.</p></div>
+      <div class="mini-carte"><span>🖼️</span><h3>Des images qui racontent</h3><p>Chaque récit est accompagné d'images, pour entrer encore plus dans l'histoire.</p></div>
+      <div class="mini-carte"><span>🕯️</span><h3>Un moment au calme</h3><p>Un coin de lecture chaleureux, à savourer lentement, quand tu veux.</p></div>
+    </section>
+    <section id="histoires">
       <h2>Les histoires</h2>
       <div id="liste-histoires" class="grille"></div>
       <p id="bibliotheque-vide" class="vide">Aucune histoire publiée pour le moment. La première arrive bientôt.</p>
