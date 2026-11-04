@@ -18,7 +18,7 @@ function afficherBibliotheque() {
   zone.innerHTML = publiees.map(h => `
     <article class="carte">
       ${h.couverture ? `<img src="${h.couverture}" alt="">` : ""}
-      <div class="corps"><h3>${echapper(h.titre)}</h3><p>${echapper(h.resume || "")}</p>
+      <div class="corps">${h.categorie ? `<span class="badge">${echapper(h.categorie)}</span>` : ""}<h3>${echapper(h.titre)}</h3><p>${echapper(h.resume || "")}</p>
       <button onclick="lireHistoire('${h.id}')">Lire l'histoire</button></div>
     </article>`).join("");
 }
@@ -47,6 +47,7 @@ window.editer = function(id) {
   document.getElementById("form-histoire").hidden = false;
   document.getElementById("champ-titre").value = enCours.titre;
   document.getElementById("champ-resume").value = enCours.resume || "";
+  document.getElementById("champ-categorie").value = enCours.categorie || "Vie";
   document.getElementById("champ-couverture-lien").value = enCours.couverture && !enCours.couverture.startsWith("data:") ? enCours.couverture : "";
   document.getElementById("apercu-couverture").src = enCours.couverture || "";
   document.getElementById("champ-publie").checked = !!enCours.publie;
@@ -110,7 +111,7 @@ function basculer(ecriture) {
 }
 document.getElementById("btn-retour").onclick = () => { document.getElementById("lecture-histoire").hidden = true; };
 document.getElementById("btn-nouvelle").onclick = () => {
-  enCours = { id: nouvelId(), titre: "Nouvelle histoire", resume: "", couverture: "", publie: false, chapitres: [{ titre: "Chapitre 1", texte: "", image: "" }] };
+  enCours = { id: nouvelId(), titre: "Nouvelle histoire", resume: "", categorie: "Vie", couverture: "", publie: false, chapitres: [{ titre: "Chapitre 1", texte: "", image: "" }] };
   histoires.push(enCours); sauver(); afficherBrouillons(); window.editer(enCours.id);
 };
 document.getElementById("btn-chapitre").onclick = () => { enCours.chapitres.push({ titre: "Nouveau chapitre", texte: "", image: "" }); afficherChapitres(); };
@@ -121,6 +122,7 @@ document.getElementById("form-histoire").onsubmit = e => {
   e.preventDefault(); if (!enCours) return;
   enCours.titre = document.getElementById("champ-titre").value;
   enCours.resume = document.getElementById("champ-resume").value;
+  enCours.categorie = document.getElementById("champ-categorie").value;
   enCours.publie = document.getElementById("champ-publie").checked;
   sauver(); afficherBibliotheque(); afficherBrouillons();
   alert("Histoire enregistrée ✓");

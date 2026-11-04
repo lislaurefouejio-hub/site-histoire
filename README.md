@@ -3,8 +3,9 @@
 Nom provisoire, sans mon nom : je peux le changer en une ligne
 (voir le titre dans `index.html`).
 
-Ambiance choisie : bibliothèque ancienne, chaude et élégante
-(brun bois, doré, crème, écriture serif comme dans les livres).
+Direction choisie : captivant, belles couleurs (violet, corail, rose,
+doré, turquoise) — des histoires qui parlent de nous, classées par
+univers : Vie, Amour, Famille, Épreuves, Espoir, Foi.
 
 ## Les fichiers (c'est tout, rien de compliqué)
 

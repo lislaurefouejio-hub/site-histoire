@@ -1,43 +1,65 @@
-/* Palette : bibliothèque ancienne, chaude et élégante (choisie par l'auteure) */
+/* Nouvelle direction : captivant, belles couleurs, des histoires qui parlent de nous */
 :root {
-  --bois: #3b2416;
-  --brun: #5a3a22;
-  --dore: #c9a24b;
-  --creme: #f7ecd7;
-  --parchemin: #fff8ea;
-  --encre: #2b1d12;
+  --encre: #2a1638;
+  --violet: #6d28a8;
+  --violet-fonce: #3b1163;
+  --corail: #ff6b4a;
+  --rose: #e8437d;
+  --dore: #f2b33d;
+  --turquoise: #12a594;
+  --fond: #fff8f1;
+  --carte: #ffffff;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: var(--creme); color: var(--encre); }
-.entete { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; background: var(--bois); color: var(--creme); }
-.logo { font-size: 1.3rem; color: var(--dore); }
-nav button, button, .btn-fichier { font: inherit; cursor: pointer; border: 1px solid var(--brun); background: var(--parchemin); color: var(--encre); padding: .5rem 1rem; border-radius: 8px; }
-nav button { background: transparent; color: var(--creme); border-color: var(--dore); margin-left: .5rem; }
-nav .nav-actif { background: var(--dore); color: var(--bois); }
-main { max-width: 980px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
-.hero { text-align: center; padding: 2.2rem 1rem 2.6rem; background: linear-gradient(rgba(59,36,22,.92), rgba(90,58,34,.92)); color: var(--creme); border-radius: 16px; }
-.hero h1 { font-size: 2.6rem; color: var(--dore); margin: 1.2rem 0 .5rem; }
-.hero .sous-titre { max-width: 620px; margin: 0 auto 1.4rem; line-height: 1.7; font-size: 1.12rem; }
-/* La fenêtre en arche, comme dans une vieille bibliothèque */
-.fenetre { max-width: 680px; margin: 0 auto; border: 6px solid var(--dore); border-radius: 999px 999px 18px 18px; overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,.45); }
-.fenetre img { display: block; width: 100%; height: 340px; object-fit: cover; }
-.bouton-hero { display: inline-block; background: var(--dore); color: var(--bois); padding: .8rem 1.5rem; border-radius: 999px; text-decoration: none; font-weight: bold; }
-.bienvenue { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin: 1.5rem 0; }
-.mini-carte { background: var(--parchemin); border: 1px solid var(--dore); border-radius: 12px; padding: 1.2rem; text-align: center; }
-.mini-carte span { font-size: 1.8rem; }
-.mini-carte h3 { margin: .5rem 0; color: var(--brun); }
-.grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem; }
-.carte { background: var(--parchemin); border: 1px solid var(--dore); border-radius: 12px; overflow: hidden; }
-.carte img { width: 100%; height: 160px; object-fit: cover; background: var(--brun); }
-.carte .corps { padding: 1rem; }
+body { margin: 0; font-family: "Segoe UI", Georgia, serif; background: var(--fond); color: var(--encre); }
+.entete { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; background: var(--violet-fonce); color: #fff; position: sticky; top: 0; z-index: 5; }
+.logo { font-size: 1.3rem; font-weight: bold; color: var(--dore); }
+nav button, button, .btn-fichier { font: inherit; cursor: pointer; border: none; background: var(--violet); color: #fff; padding: .55rem 1.1rem; border-radius: 999px; }
+nav button { background: transparent; border: 1px solid var(--dore); color: #fff; margin-left: .5rem; }
+nav .nav-actif { background: var(--dore); color: var(--violet-fonce); }
+main { max-width: 1040px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+
+/* --- Accueil qui captive : grande photo, voile en dégradé de couleurs --- */
+.hero { position: relative; border-radius: 22px; overflow: hidden; min-height: 480px; display: flex; align-items: flex-end; }
+.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-voile { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(59,17,99,.25) 0%, rgba(109,40,168,.55) 45%, rgba(232,67,125,.75) 100%); }
+.hero-texte { position: relative; padding: 2.5rem; color: #fff; max-width: 720px; }
+.hero-sur { text-transform: uppercase; letter-spacing: .18em; color: var(--dore); font-weight: bold; margin: 0; }
+.hero h1 { font-size: 3rem; line-height: 1.1; margin: .6rem 0; font-family: Georgia, serif; }
+.hero h1 em { color: var(--dore); }
+.hero .sous-titre { line-height: 1.75; font-size: 1.13rem; margin: 0 0 1.5rem; }
+.bouton-hero { display: inline-block; background: var(--corail); color: #fff; padding: .9rem 1.7rem; border-radius: 999px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+.phrase { text-align: center; font-family: Georgia, serif; font-style: italic; font-size: 1.35rem; color: var(--violet); padding: 2rem 1rem .5rem; }
+
+/* --- Les univers : une tuile colorée par coin de la vie --- */
+.univers h2, #histoires h2 { font-family: Georgia, serif; font-size: 1.9rem; color: var(--violet-fonce); }
+.tuiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+.tuile { border-radius: 16px; padding: 1.2rem; color: #fff; }
+.tuile h3 { margin: .4rem 0; }
+.tuile p { margin: 0; line-height: 1.5; font-size: .96rem; }
+.t-vie { background: linear-gradient(150deg, #12a594, #0b6e63); }
+.t-amour { background: linear-gradient(150deg, #e8437d, #b11c54); }
+.t-famille { background: linear-gradient(150deg, #f2b33d, #d97b1e); }
+.t-epreuves { background: linear-gradient(150deg, #5b7fb9, #314e86); }
+.t-espoir { background: linear-gradient(150deg, #ff8a4a, #e8437d); }
+.t-foi { background: linear-gradient(150deg, #7c3aed, #3b1163); }
+
+/* --- Bibliothèque des histoires --- */
+.grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.3rem; }
+.carte { background: var(--carte); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(59,17,99,.13); border-top: 5px solid var(--rose); }
+.carte img { width: 100%; height: 170px; object-fit: cover; background: var(--violet); }
+.carte .corps { padding: 1.1rem; }
+.badge { display: inline-block; background: var(--violet); color: #fff; font-size: .8rem; padding: .2rem .7rem; border-radius: 999px; margin-bottom: .5rem; }
 .vide, .resume { font-style: italic; }
-.couverture-grande { width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; }
-.chapitre img { max-width: 100%; border-radius: 10px; margin: 1rem 0; }
-.chapitre p { line-height: 1.8; font-size: 1.1rem; white-space: pre-wrap; }
+.couverture-grande { width: 100%; max-height: 360px; object-fit: cover; border-radius: 16px; }
+.chapitre img { max-width: 100%; border-radius: 12px; margin: 1rem 0; }
+.chapitre p { line-height: 1.85; font-size: 1.12rem; white-space: pre-wrap; }
+
+/* --- Espace d'écriture --- */
 form label { display: block; margin: 1rem 0; }
-input, textarea { width: 100%; font: inherit; padding: .6rem; border: 1px solid var(--brun); border-radius: 8px; background: #fff; }
-.apercu { max-width: 260px; border-radius: 8px; }
+input, textarea, select { width: 100%; font: inherit; padding: .6rem; border: 1px solid #c9b8dd; border-radius: 10px; background: #fff; }
+.apercu { max-width: 260px; border-radius: 10px; }
 .barre-outils, .actions-form { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; margin: 1rem 0; }
 #suggestions .suggestion { background: #fff; border-left: 4px solid #b3261e; padding: .6rem; margin: .5rem 0; }
-#suggestions .suggestion button { margin-left: .5rem; border-color: var(--dore); }
-footer { text-align: center; padding: 1.5rem; background: var(--bois); color: var(--creme); }
+footer { text-align: center; padding: 1.6rem; background: var(--violet-fonce); color: #ffe9c9; }
+@media (max-width: 640px) { .hero h1 { font-size: 2.2rem; } .hero { min-height: 420px; } .hero-texte { padding: 1.6rem; } }

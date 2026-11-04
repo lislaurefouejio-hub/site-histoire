@@ -19,18 +19,28 @@
   <!-- ===== Vue lecture : ce que les visiteurs voient ===== -->
   <main id="vue-lecture">
     <section class="hero">
-      <!-- La grande fenêtre sur la bibliothèque : c'est elle qui accueille le visiteur -->
-      <div class="fenetre">
-        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1600&q=80" alt="Une grande bibliothèque ancienne, pleine de livres">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1600&q=80" alt="Des mains réunies, la chaleur d'être ensemble">
+      <div class="hero-voile"></div>
+      <div class="hero-texte">
+        <p class="hero-sur">Bienvenue ici, chez toi</p>
+        <h1>Des histoires qui parlent de <em>nous</em></h1>
+        <p class="sous-titre">Des récits de vie, d'amour, de famille, d'épreuves et d'espoir. Des histoires vraies ou inventées, mais qui ressemblent à ce qu'on traverse — et où chacun peut se reconnaître.</p>
+        <a class="bouton-hero" href="#histoires">Entrer dans les histoires ↓</a>
       </div>
-      <h1>Bienvenue entre les Pages</h1>
-      <p class="sous-titre">Entre, installe-toi. Ici, des histoires t'attendent, une page à la fois, dans la chaleur et le calme d'une vieille bibliothèque.</p>
-      <a class="bouton-hero" href="#histoires">Découvrir les histoires ↓</a>
     </section>
-    <section class="bienvenue">
-      <div class="mini-carte"><span>📖</span><h3>Des histoires à découvrir</h3><p>Chaque histoire s'ouvre comme un livre qu'on prend sur une étagère.</p></div>
-      <div class="mini-carte"><span>🖼️</span><h3>Des images qui racontent</h3><p>Chaque récit est accompagné d'images, pour entrer encore plus dans l'histoire.</p></div>
-      <div class="mini-carte"><span>🕯️</span><h3>Un moment au calme</h3><p>Un coin de lecture chaleureux, à savourer lentement, quand tu veux.</p></div>
+    <section class="phrase">
+      <p>« Il y a des histoires qu'on lit… et des histoires qui nous lisent. »</p>
+    </section>
+    <section class="univers">
+      <h2>Des histoires pour chaque coin de la vie</h2>
+      <div class="tuiles">
+        <div class="tuile t-vie">🌱<h3>Vie</h3><p>Le quotidien, les choix, les commencements.</p></div>
+        <div class="tuile t-amour">❤️<h3>Amour</h3><p>Ce qui rapproche, ce qui blesse, ce qui guérit.</p></div>
+        <div class="tuile t-famille">🏠<h3>Famille</h3><p>Les liens qui nous portent depuis toujours.</p></div>
+        <div class="tuile t-epreuves">🌧️<h3>Épreuves</h3><p>Les jours difficiles, et comment on s'en relève.</p></div>
+        <div class="tuile t-espoir">🌅<h3>Espoir</h3><p>La lumière qui revient, même après la nuit.</p></div>
+        <div class="tuile t-foi">✨<h3>Foi</h3><p>Ce qui nous tient debout quand tout vacille.</p></div>
+      </div>
     </section>
     <section id="histoires">
       <h2>Les histoires</h2>
@@ -61,6 +71,12 @@
 
     <form id="form-histoire" hidden>
       <label>Titre de l'histoire <input id="champ-titre" required></label>
+      <label>Univers de l'histoire
+        <select id="champ-categorie">
+          <option>Vie</option><option>Amour</option><option>Famille</option>
+          <option>Épreuves</option><option>Espoir</option><option>Foi</option>
+        </select>
+      </label>
       <label>Résumé court <textarea id="champ-resume" rows="2"></textarea></label>
       <label>Image de couverture (lien ou fichier)
         <input id="champ-couverture-lien" placeholder="https://...">
@@ -82,7 +98,7 @@
     </form>
   </main>
 
-  <footer><p>Entre les Pages — un coin de lecture chaleureux.</p></footer>
+  <footer><p>Entre les Pages — des histoires qui parlent de nous.</p></footer>
   <script src="app.js"></script>
 </body>
 </html>
