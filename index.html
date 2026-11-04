@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Le nom du site : change ce titre ici, c'est le tien. Aucun nom personnel. -->
+  <title>Entre les Pages — Histoires à lire</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="entete">
+    <div class="logo">📚 Entre les Pages</div>
+    <nav>
+      <button id="btn-bibliotheque" class="nav-actif">Bibliothèque</button>
+      <button id="btn-ecriture">Mon espace d'écriture</button>
+    </nav>
+  </header>
+
+  <!-- ===== Vue lecture : ce que les visiteurs voient ===== -->
+  <main id="vue-lecture">
+    <section class="hero">
+      <h1>Entre les Pages</h1>
+      <p class="sous-titre">Des histoires à découvrir, une page à la fois, dans le calme d'une vieille bibliothèque.</p>
+    </section>
+    <section>
+      <h2>Les histoires</h2>
+      <div id="liste-histoires" class="grille"></div>
+      <p id="bibliotheque-vide" class="vide">Aucune histoire publiée pour le moment. La première arrive bientôt.</p>
+    </section>
+    <section id="lecture-histoire" hidden>
+      <button id="btn-retour">← Retour à la bibliothèque</button>
+      <img id="lecture-couverture" class="couverture-grande" alt="">
+      <h2 id="lecture-titre"></h2>
+      <p id="lecture-resume" class="resume"></p>
+      <div id="lecture-chapitres"></div>
+    </section>
+  </main>
+
+  <!-- ===== Vue écriture : réservée à l'auteure ===== -->
+  <main id="vue-ecriture" hidden>
+    <h2>Mon espace d'écriture</h2>
+    <p>Ici, tu écris directement sur le site. Tout est enregistré automatiquement dans ton navigateur. Le correcteur français vérifie ton texte pendant que tu écris.</p>
+
+    <div class="barre-outils">
+      <button id="btn-nouvelle">+ Nouvelle histoire</button>
+      <button id="btn-exporter">Exporter mes histoires (.json)</button>
+      <label class="btn-fichier">Importer (.json) <input type="file" id="fichier-import" accept=".json" hidden></label>
+    </div>
+
+    <div id="liste-brouillons"></div>
+
+    <form id="form-histoire" hidden>
+      <label>Titre de l'histoire <input id="champ-titre" required></label>
+      <label>Résumé court <textarea id="champ-resume" rows="2"></textarea></label>
+      <label>Image de couverture (lien ou fichier)
+        <input id="champ-couverture-lien" placeholder="https://...">
+        <input type="file" id="champ-couverture-fichier" accept="image/*">
+      </label>
+      <img id="apercu-couverture" class="apercu" alt="">
+
+      <h3>Chapitres</h3>
+      <div id="liste-chapitres"></div>
+      <button type="button" id="btn-chapitre">+ Ajouter un chapitre</button>
+
+      <div class="actions-form">
+        <label><input type="checkbox" id="champ-publie"> Publier cette histoire (visible des visiteurs)</label>
+        <button type="submit">Enregistrer l'histoire</button>
+        <button type="button" id="btn-supprimer">Supprimer</button>
+      </div>
+      <p id="message-correcteur" aria-live="polite"></p>
+      <div id="suggestions"></div>
+    </form>
+  </main>
+
+  <footer><p>Entre les Pages — un coin de lecture chaleureux.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
