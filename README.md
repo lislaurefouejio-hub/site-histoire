@@ -25,10 +25,15 @@ je puisse tout lire, tout comprendre et tout modifier moi-même.
 ## Écrire mes histoires
 
 - Onglet « Mon espace d'écriture » → « Nouvelle histoire ».
+- Chaque histoire est un récit complet (pas un roman en chapitres) :
+  un titre, un univers, un résumé, une image de couverture, et le
+  récit écrit en parties. Le lecteur lit une partie à la fois et
+  clique sur la flèche « Lire la suite » pour continuer — chaque
+  partie peut avoir sa propre image, si je veux.
 - Le texte est enregistré automatiquement dans le navigateur de
   l'ordinateur où j'écris (localStorage).
 - Le correcteur français (LanguageTool, gratuit) vérifie pendant que
-  je tape : les suggestions apparaissent sous le chapitre, je clique
+  je tape : les suggestions apparaissent sous le texte, je clique
   sur une correction pour l'appliquer.
 - Bouton « Exporter » : je garde une copie `mes-histoires.json` de
   toutes mes histoires. Bouton « Importer » : je les recharge.
@@ -37,7 +42,8 @@ je puisse tout lire, tout comprendre et tout modifier moi-même.
 
 1. Créer un dépôt (repository) sur mon compte GitHub, par exemple
    nommé `site-histoire`.
-2. Y déposer les 3 fichiers : `index.html`, `styles.css`, `app.js`.
+2. Y déposer les fichiers : `index.html`, `styles.css`, `app.js`
+   et `image-accueil.png` (l'image de la page d'accueil).
 3. Dans le dépôt : Settings → Pages → Source : branche `main`, dossier `/ (root)` → Save.
 4. Après quelques minutes, le site répond à une adresse du type
    `https://<mon-compte>.github.io/site-histoire/`

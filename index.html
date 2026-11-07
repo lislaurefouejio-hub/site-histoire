@@ -53,6 +53,12 @@
       <h2 id="lecture-titre"></h2>
       <p id="lecture-resume" class="resume"></p>
       <div id="lecture-chapitres"></div>
+      <div class="nav-lecture">
+        <button id="btn-partie-prec">← Précédent</button>
+        <span id="compteur-partie"></span>
+        <button id="btn-partie-suiv">Lire la suite →</button>
+      </div>
+      <p id="fin-recit" class="fin-recit" hidden>— Fin du récit — Merci de m'avoir lue. —</p>
     </section>
   </main>
 
@@ -84,9 +90,10 @@
       </label>
       <img id="apercu-couverture" class="apercu" alt="">
 
-      <h3>Chapitres</h3>
-      <div id="liste-chapitres"></div>
-      <button type="button" id="btn-chapitre">+ Ajouter un chapitre</button>
+      <h3>Le récit, partie par partie</h3>
+      <p>Écris ton récit en parties : le lecteur lira une partie, puis cliquera sur la flèche « Lire la suite » pour passer à la suivante. Une partie = un moment de ton histoire (le début, une rencontre, un tournant, la fin...). Le correcteur vérifie pendant que tu écris.</p>
+      <div id="liste-parties"></div>
+      <button type="button" id="btn-partie">+ Ajouter une partie</button>
 
       <div class="actions-form">
         <label><input type="checkbox" id="champ-publie"> Publier cette histoire (visible des visiteurs)</label>
